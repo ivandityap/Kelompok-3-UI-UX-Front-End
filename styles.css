@@ -7,16 +7,16 @@ body {
   }
   
   .listbuku {
-    width: 100%;
+    width: fit-content;
     display: inline-block;
     height: fit-content;
-    padding-left: 25%;
-    padding-right: 25%;
+    margin-left: 25%;
+    margin-right: 25%;
   }
   
   .lbuku {
     display:inline-block;
-    width: 560px;
+    width: 590px;
     height: 1000px;
     padding: 0px 10px 10px 10px;
     text-align: center;
