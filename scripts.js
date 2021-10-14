@@ -324,33 +324,54 @@ class filterBuku extends HTMLElement{
   }
 }
 
-
+class BukuList{
+    constructor() {
+      this.buku = "";
+      this.kategori = ""
+    }
+    setBuku(buku){
+      this.buku = buku
+    }
+    getBuku(){
+      return this.buku
+    }
+    setKategori(kategori){
+      this.kategori = kategori
+    }
+    getKategori(){
+      return this.kategori
+    }
+}
 
 window.customElements.define('per-buku',perBuku);
 window.customElements.define('list-buku',listBuku);
 window.customElements.define('cat-buku',catBuku);
 window.customElements.define('filter-buku',filterBuku);
+let Buku = new BukuList();
 
 //cara menggunakan komponen
+async function fetchBuku(){
+    let data = await(await fetch('https://dmujitempbagifile.s3.ap-southeast-1.amazonaws.com/buku.json')).json();
+    Buku.setBuku(data)
+    Buku.getBuku();
+}
 
 async function ambildataBukuTerbaruTerpopuler(){
   const options ={
     headers:{'Content-Type':'application/json'}
   };
   
-
-  const listbuku = await fetch('https://dmujitempbagifile.s3.ap-southeast-1.amazonaws.com/buku.json');
-  data = await listbuku.json();
+  let data = Buku.getBuku()
   const temp2 = document.createElement('per-buku');
   const temp3 = document.createElement('per-buku');
-  for (var i = 0; i < data.length; i++){
+  for (var i = 0; i < Buku.getBuku().length; i++){
     if (data[i]["flag"] == "topnew"){
       data[i]["tipebuku"] = "BUKU TERBARU";
       data[i]["bintang"] = "⭐".repeat(data[i]["rate"]);
       temp2.buku = data[i];
     };
   };
-  for (var j = 0; j < data.length; j++){
+  for (var j = 0; j < Buku.getBuku().length; j++){
     if (data[j]["flag"] == "toprate"){
       data[j]["tipebuku"] = "BUKU TERLARIS";
       data[j]["bintang"] = "⭐".repeat(data[j]["rate"]);
@@ -362,22 +383,23 @@ async function ambildataBukuTerbaruTerpopuler(){
 }
 
 async function ambildataListBuku(){
-
+  Buku.setKategori('')
   document.getElementById("areafilter").innerHTML = `
-      <a href="#" onclick="ambildataListBuku()">All</a>
+      <a href="#" onclick="ambildataListBuku('')">All</a>
+  `;
+  document.getElementById("areasort").innerHTML = `
+      <a href="#" onclick="sortBuku('asc')">Harga Tertinggi</a>
+      <a href="#" onclick="sortBuku('desc')">Harga Terendah</a>
   `;
 
   const options ={
     headers:{'Content-Type':'application/json'}
   };
  
-  const dtbuku = await fetch('https://dmujitempbagifile.s3.ap-southeast-1.amazonaws.com/buku.json');
-  data = await dtbuku.json();
-  
   var tempCatCheck = "-";
   document.getElementById("areakerja").innerHTML = "";
 
-  data.forEach(items=>{
+  Buku.getBuku().forEach(items=>{
       const daftar = document.createElement('list-buku');
       const tempCat = document.createElement('cat-buku');
       const tempFilter = document.createElement('filter-buku');
@@ -396,17 +418,16 @@ async function ambildataListBuku(){
 }
 
 async function ambildataListBukuKategori(kategori){
+  Buku.setKategori(kategori)
+  
   const options ={
     headers:{'Content-Type':'application/json'}
   };
  
-  const dtbuku = await fetch('https://dmujitempbagifile.s3.ap-southeast-1.amazonaws.com/buku.json');
-  data = await dtbuku.json();
-  
   var tempCatCheck = "-";
   document.getElementById("areakerja").innerHTML = "";
 
-  data.forEach(items=>{
+  Buku.getBuku().forEach(items=>{
       const daftar = document.createElement('list-buku');
       const tempCat = document.createElement('cat-buku');
 
@@ -425,8 +446,31 @@ async function ambildataListBukuKategori(kategori){
   });
 }
 
+async function sortBuku(order){
+  let sorted = Buku.getBuku();
+  if(order == 'asc')
+  sorted.sort((a, b) => b.harga - a.harga)
+  else
+  sorted.sort((a, b) => a.harga - b.harga)
+
+  Buku.setBuku(sorted)
+  console.log(Buku.getBuku())
+  if(Buku.getKategori() != '')
+  await ambildataListBukuKategori(Buku.kategori)
+  else
+  await ambildataListBuku().then(()=>console.log(Buku.getKategori()))
+}
+
 //panggil fungsi
 
-ambildataBukuTerbaruTerpopuler();
+fetchBuku()
+    .then(text => {
+        
+      ambildataBukuTerbaruTerpopuler();
 
-ambildataListBuku();
+      ambildataListBuku();
+
+    })
+    .catch(err => {
+        // Deal with the fact the chain failed
+    });
