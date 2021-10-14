@@ -87,6 +87,7 @@ class perBuku extends HTMLElement{
      float: left;
      padding: 16px;
    }
+
    .button {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -106,6 +107,8 @@ class perBuku extends HTMLElement{
     background-color: white; 
     color: green; 
     border: 2px solid #4CAF50;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
   }
   
   .button1:hover {
@@ -114,20 +117,18 @@ class perBuku extends HTMLElement{
   }
    
    h1{
-      font-family: "arial";
       font-size: 30px;
     }
     h3{
-      font-family: "arial";
       font-size: 20px;
     }
 
     h5{
-      font-family: "arial";
+
     }
 
     p{
-      font-family: "arial";
+
     }
     img{
       border-radius:8px;
@@ -190,7 +191,6 @@ class catBuku extends HTMLElement{
       width: 100%;
       margin-left: 8px;
       font-size: small;
-      font-family: monospace;
       float: left;
     }
     
@@ -239,6 +239,7 @@ class listBuku extends HTMLElement{
                 overflow:auto;
                 border:#c0c0c0 solid;
                 border-radius: 10px;
+                font-size: 12px;
             }
             
             .card img {
@@ -292,7 +293,7 @@ class listBuku extends HTMLElement{
                 }
 
                 #price {
-                  font-size: large;
+                  font-size: small;
                   text-align: center;
                   font-weight: bold;
                }
@@ -320,7 +321,7 @@ class filterBuku extends HTMLElement{
   }
   set filter(filter){
     this.innerHTML = `
-        <a href="#" onclick="ambildataListBukuKategori('${filter.kategori}')">${filter.kategori.toUpperCase()}</a>        
+        <a href='javascript:void();' onclick="ambildataListBukuKategori('${filter.kategori}')">${filter.kategori.toUpperCase()}</a>        
     `;
   }
 }
@@ -386,11 +387,11 @@ async function ambildataBukuTerbaruTerpopuler(){
 async function ambildataListBuku(){
   Buku.setKategori('')
   document.getElementById("areafilter").innerHTML = `
-      <a href="#" onclick="ambildataListBuku('')">All</a>
+      <a href='javascript:void();' onclick="ambildataListBuku('')">All</a>
   `;
   document.getElementById("areasort").innerHTML = `
-      <a href="#" onclick="sortBuku('asc')">Harga Tertinggi</a>
-      <a href="#" onclick="sortBuku('desc')">Harga Terendah</a>
+      <a href='javascript:void();' onclick="sortBuku('asc')">Harga Tertinggi</a>
+      <a href='javascript:void();' onclick="sortBuku('desc')">Harga Terendah</a>
   `;
 
   const options ={
