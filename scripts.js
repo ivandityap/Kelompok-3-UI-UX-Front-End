@@ -191,10 +191,11 @@ class catBuku extends HTMLElement{
       margin-left: 8px;
       font-size: small;
       font-family: monospace;
+      float: left;
     }
     
     #ktg_pad {
-      width: 400px;
+      width: 60%;
       height: 5px;
       background-color: mediumseagreen;
       
