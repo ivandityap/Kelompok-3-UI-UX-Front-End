@@ -37,7 +37,7 @@ body {
   
 /* Style The Dropdown Button */
 .dropbtn {
-  background-color: #4CAF50;
+  background-color: mediumseagreen;
   color: white;
   padding: 16px 32px 16px 32px;
   font-size: 16px;
@@ -83,7 +83,7 @@ body {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  background-color: darkseagreen;
 }
 
 #areakerja {
