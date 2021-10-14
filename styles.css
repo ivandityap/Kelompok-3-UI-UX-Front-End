@@ -29,6 +29,7 @@ body {
   padding: 16px 32px 16px 32px;
   font-size: 16px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -60,7 +61,7 @@ body {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover,.dropdown-content2 a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover,.dropdown-content2 a:hover {background-color: #e3e3e3}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content,.dropdown:hover .dropdown-content2{
