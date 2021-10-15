@@ -533,7 +533,7 @@ function myFunction() {
   document.getElementById("ft-title").innerHTML = `
             <h3>Kelompok 3 UI/UX & Front-End</h3>
             <div id="anggota">
-              <h4>Anggota:</h4>
+              <h4>Anggota :</h4>
               <table id="anggota-klp">
                 <tr><td>Hizkya Firstadipa Hartoko</td><td>(20/455447/PA/19662)</td><td style="padding-left:50px;">Ivan Arsyaditya Prananda</td><td>(21/488674/NPA/19757)</td></tr>
                 <tr><td>M. Farhan Dwi Rizqi</td><td>(20/459271/PA/19932)</td><td style="padding-left:50px;">Nashira Oksani Ardine Santosa</td><td>(20/462188/PA/20160)</td></tr>
