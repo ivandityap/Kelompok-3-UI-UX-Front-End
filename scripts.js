@@ -516,17 +516,35 @@ document.getElementById("lb-title").onmouseout = function() {mOut()};
 
 async function mOver() {
   document.getElementById("lb-title").innerHTML = `
-                    <p style="margin:0px;">List Buku</p>
-                    <h6 style="margin:3px; background: linear-gradient(#3CB371, #9fdfbc); color:#000000; border-radius: 0px 0px 5px 5px;">Silahkan Pilih Tipe Pencarian</h6>
-                    `
+            <p style="margin:0px;">List Buku</p>
+            <h6 style="margin:3px; background: linear-gradient(#3CB371, #9fdfbc); color:#000000; border-radius: 0px 0px 5px 5px;">Silahkan Pilih Tipe Pencarian</h6>
+            `;
 }
 
 async function mOut(ket) {
   document.getElementById("lb-title").innerHTML = `
-  List Buku
-  `
+            List Buku
+  `;
 }
 
+document.getElementById("ft-title").onclick = function() {myFunction()};
+
+function myFunction() {
+  document.getElementById("ft-title").innerHTML = `
+            <h3>Kelompok 3 UI/UX & Front-End</h3>
+            <div id="anggota">
+              <h4>Anggota:</h4>
+              <table id="anggota-klp">
+                  <tr><td>Hizkya Firstadipa Hartoko</td><td>(20/455447/PA/19662)</td></tr>
+                  <tr><td>M. Farhan Dwi Rizqi</td><td>(20/459271/PA/19932)</td></tr>
+                  <tr><td>Nurillah Tsany Wigati</td><td>(21/488692/NPA/19758)</td></tr>
+                  <tr><td>Ivan Arsyaditya Prananda</td><td>(21/488674/NPA/19757)</td></tr>
+                  <tr><td>Nashira Oksani Ardine Santosa</td><td>(20/462188/PA/20160)</td></tr>
+                  <tr><td>Nathan Arianto Wijaya</td><td>(20/459273/PA/19934)</td></tr>
+              </table>
+            </div>
+  `;
+}
 
 //panggil fungsi
 
