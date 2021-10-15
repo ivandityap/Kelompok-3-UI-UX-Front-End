@@ -253,6 +253,7 @@ body {
 
 
 .footer {
+  display: block;
   padding: 20px 50px 20px 50px;
   background: mediumseagreen;
   margin-top: 20px;
