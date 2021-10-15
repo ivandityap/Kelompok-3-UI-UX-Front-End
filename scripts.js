@@ -535,12 +535,9 @@ function myFunction() {
             <div id="anggota">
               <h4>Anggota:</h4>
               <table id="anggota-klp">
-                  <tr><td>Hizkya Firstadipa Hartoko</td><td>(20/455447/PA/19662)</td></tr>
-                  <tr><td>M. Farhan Dwi Rizqi</td><td>(20/459271/PA/19932)</td></tr>
-                  <tr><td>Nurillah Tsany Wigati</td><td>(21/488692/NPA/19758)</td></tr>
-                  <tr><td>Ivan Arsyaditya Prananda</td><td>(21/488674/NPA/19757)</td></tr>
-                  <tr><td>Nashira Oksani Ardine Santosa</td><td>(20/462188/PA/20160)</td></tr>
-                  <tr><td>Nathan Arianto Wijaya</td><td>(20/459273/PA/19934)</td></tr>
+                <tr><td>Hizkya Firstadipa Hartoko</td><td>(20/455447/PA/19662)</td><td style="padding-left:50px;">Ivan Arsyaditya Prananda</td><td>(21/488674/NPA/19757)</td></tr>
+                <tr><td>M. Farhan Dwi Rizqi</td><td>(20/459271/PA/19932)</td><td style="padding-left:50px;">Nashira Oksani Ardine Santosa</td><td>(20/462188/PA/20160)</td></tr>
+                <tr><td>Nurillah Tsany Wigati</td><td>(21/488692/NPA/19758)</td><td style="padding-left:50px;">Nathan Arianto Wijaya</td><td>(20/459273/PA/19934)</td></tr>
               </table>
             </div>
   `;
