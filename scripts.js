@@ -1,3 +1,14 @@
+
+
+const [red, green, blue] = [17,85,204]
+const nav = document.querySelector('nav')
+window.addEventListener('scroll', () => {
+  const y = 1 + (window.scrollY || window.pageYOffset) / 100
+  const z = 1 + (window.scrollY || window.pageYOffset) / 700
+  const [r, g, b] = [red, green+y, blue/z]
+  nav.style.backgroundColor = `rgba(${r}, ${g}, ${b})`
+})
+
 //Buku Terbaru dan Terpopuler
 class perBuku extends HTMLElement{
   constructor(){
@@ -192,6 +203,7 @@ class catBuku extends HTMLElement{
       margin-left: 8px;
       font-size: small;
       float: left;
+      animation: fadein 1s linear;
     }
     
     #ktg_pad {
@@ -205,6 +217,11 @@ class catBuku extends HTMLElement{
       height: fit-content;
       color: black;
       text-align: left;
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
     }
     </style>
 
@@ -240,6 +257,8 @@ class listBuku extends HTMLElement{
                 border:#c0c0c0 solid;
                 border-radius: 10px;
                 font-size: 12px;
+                
+                animation: fadein 1s linear;
             }
             
             .card img {
@@ -297,6 +316,35 @@ class listBuku extends HTMLElement{
                   text-align: center;
                   font-weight: bold;
                }
+
+               ::-webkit-scrollbar {
+                width: 8px;
+              }
+              
+              /* Track */
+              ::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 5px grey; 
+                border-radius: 10px;
+              }
+               
+              /* Handle */
+              ::-webkit-scrollbar-thumb {
+                background: mediumseagreen;
+                border-radius: 5px;
+              }
+              
+              /* Handle on hover */
+              ::-webkit-scrollbar-thumb:hover {
+                background: darkseagreen; 
+              }
+
+
+
+
+            @keyframes fadein {
+                from { opacity: 0; }
+                to   { opacity: 1; }
+            }
                 
         </style>
         
