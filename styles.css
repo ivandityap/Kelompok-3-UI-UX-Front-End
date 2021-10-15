@@ -184,7 +184,7 @@ body {
     overflow: auto;
   }
   
-  .lbuku h1 {
+  #lb-title {
     margin-top:0px;
     padding: 10px;
     background-color: #3CB371;
