@@ -511,6 +511,19 @@ async function sortBuku(order){
   await ambildataListBuku().then(()=>console.log(Buku.getKategori()))
 }
 
+async function mOver(ket) {
+  ket.innerHTML = `
+                    <p style="margin:0px;">List Buku</p>
+                    <h6 style="margin:3px; background: linear-gradient(#3CB371, #9fdfbc); color:#000000; border-radius: 0px 0px 5px 5px;">Silahkan Pilih Tipe Pencarian</h6>
+                    `
+}
+
+async function mOut(ket) {
+  ket.innerHTML = `
+  List Buku
+  `
+}
+
 //panggil fungsi
 
 fetchBuku()
