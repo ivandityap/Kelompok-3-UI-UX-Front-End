@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
 @import url('https://weloveiconfonts.com/api/?family=fontawesome');
 
 [class*="fontawesome-"]:before {
@@ -38,7 +39,7 @@ body {
     padding-right: 20px;
 
     z-index: 999;
-    background-color: #1e201f;
+    /*background-color: #1e201f; */
   
   }
   
@@ -174,7 +175,7 @@ body {
   
   .lbuku {
     display:inline-block;
-    width: 590px;
+    width: 650px;
     height: 1000px;
     padding: 0px 10px 10px 10px;
     text-align: center;
@@ -246,6 +247,7 @@ body {
 
 #areakerja {
   width: 100%;
+  padding-left: 20px ;
 }
 
 
@@ -274,4 +276,19 @@ body {
 #about {
   display: inline-block;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
