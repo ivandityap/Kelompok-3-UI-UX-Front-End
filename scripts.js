@@ -155,6 +155,7 @@ class perBuku extends HTMLElement{
   }
    h1{
       font-size: 30px;
+      color: white;
     }
     h3
       font-size: 20px;
