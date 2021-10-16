@@ -211,7 +211,7 @@ class perBuku extends HTMLElement{
             <p id="rate">Rate: ${buku.bintang} ${buku.rate}</p>
           </div>
           <div id="buttonbuy">
-            <button type="button" class="button button1">Rp.${buku.harga} - Buy Now</button>
+            <button type="button" class="button button1"  onclick="beli()">Rp.${buku.harga} - Buy Now</button>
           </div>
         </div>        
       </div>
@@ -220,7 +220,9 @@ class perBuku extends HTMLElement{
   }
     
 }
-
+function beli(){
+    alert("Buku berhasil dimasukkan ke keranjang!");
+}
 //List Buku
 class catBuku extends HTMLElement{
   constructor(){
