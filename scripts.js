@@ -13,12 +13,14 @@ window.addEventListener('scroll', () => {
 class perBuku extends HTMLElement{
   constructor(){
     super();
-   this.root = this.attachShadow({mode: 'open'});
+   //this.root = this.attachShadow({mode: 'open'}); //shadow dom 
   }
   set buku(buku){
-    this.root.innerHTML = `
+    const judulbuku = buku.judul.replace(/\s/g, '');
+    this.innerHTML = `
     <style>
     #wrapper {
+      margin-left: 30px;
       border:hide;
       width: 630px;
       height:400px;
@@ -75,7 +77,7 @@ class perBuku extends HTMLElement{
      height:10px;
      float:left;
    }
-   #desc{
+   #desc-${judulbuku}{
     style = "border:hide;
     width:400px;
     height:80px;
@@ -153,10 +155,7 @@ class perBuku extends HTMLElement{
     background-color: #4CAF50;
     color: white;
   }
-   h1{
-      font-size: 30px;
-      color: white; 
-    }
+  
     h3
       font-size: 20px;
     }
@@ -185,7 +184,11 @@ class perBuku extends HTMLElement{
       <div id = "container">
         <div id = "header">
           <div id = "type">
-            <h1>${buku.tipebuku}</h1>
+            <h1 
+            style=
+            "font-size: 30px;
+            color: white; "
+            >${buku.tipebuku}</h1>
           </div>
         </div>
         <div id = "pict">
@@ -198,11 +201,11 @@ class perBuku extends HTMLElement{
           <div id="aurthor">
             by ${buku.penulis}
           </div>
-          <div id="desc">
+          <div id="desc-${judulbuku}">
             <p>${buku.deskripsi}</p>
           </div>
           <div id="buttondesc">
-            <button type="button" class="buttonHide button2">Hide Description</button>
+            <button type="button" class="buttonHide button2" id="btn-desc-${judulbuku}" onclick="hideDesc('${judulbuku}')">Hide Description</button>
           </div>
           <div id="rate">
             <p id="rate">Rate: ${buku.bintang} ${buku.rate}</p>
