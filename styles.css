@@ -206,6 +206,11 @@
   text-align: center;
 }
 
+#ft-title-text:hover {
+  cursor: pointer;
+  color: #DDD;
+}
+
 #anggota {
   margin-bottom:0px;
   text-align : center;
