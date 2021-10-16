@@ -18,6 +18,7 @@ class perBuku extends HTMLElement{
   set buku(buku){
     this.root.innerHTML = `
     <style>
+    <style>
     #wrapper {
       border:hide;
       width: 630px;
@@ -78,14 +79,14 @@ class perBuku extends HTMLElement{
    #desc{
     style = "border:hide;
     width:400px;
-    height:100px;
+    height:80px;
     float:left;
     margin-top: 20px;
    }
    #rate{
     style = "border:hide; 
     width:189px; 
-    height:70px;
+    height:60px;
     float:left; 
     text-align:center; 
     display: 
@@ -96,19 +97,18 @@ class perBuku extends HTMLElement{
 
    #buttonbuy {
      float: left;
-     padding: 16px;
+     padding: 0px;
    }
-
    .button {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
-    padding: 16px;
+    padding: 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin-left:15px;
     transition-duration: 0.4s;
     cursor: pointer;
     font-weight: 550;
@@ -126,20 +126,46 @@ class perBuku extends HTMLElement{
     background-color: #4CAF50;
     color: white;
   }
-   
+  
+  
+  .buttonHide{
+  background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    transition-duration: 0.4s;
+    margin-top: 23px;
+    cursor: pointer;
+    font-weight: 550;
+    font-family: 'Quicksand', sans-serif;
+  } 
+  
+  .button2 {
+    background-color: white; 
+    color: green; 
+    border: 2px solid #4CAF50;
+  }
+   .button2:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
    h1{
       font-size: 30px;
     }
-    h3{
+    h3
       font-size: 20px;
     }
 
     h5{
-
+      
     }
 
     p{
-
+      
     }
     img{
       border-radius:8px;
@@ -173,6 +199,9 @@ class perBuku extends HTMLElement{
           </div>
           <div id="desc">
             <p>${buku.deskripsi}</p>
+          </div>
+          <div id="buttondesc">
+            <button type="button" class="buttonHide button2">Hide Description</button>
           </div>
           <div id="rate">
             <p id="rate">Rate: ${buku.bintang} ${buku.rate}</p>
