@@ -3,7 +3,7 @@
 const [red, green, blue] = [17,85,204]
 const nav = document.querySelector('nav')
 window.addEventListener('scroll', () => {
-  const y = 1 + (window.scrollY || window.pageYOffset) / 10
+  const y = 1 + (window.scrollY || window.pageYOffset) / 25
   const z = 1 + (window.scrollY || window.pageYOffset) / 700
   const [r, g, b] = [red, green+y, blue/z]
   nav.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
