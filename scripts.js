@@ -148,6 +148,7 @@ class perBuku extends HTMLElement{
     background-color: white; 
     color: green; 
     border: 2px solid #4CAF50;
+    font-weight: bold;
   }
    .button2:hover {
     background-color: #4CAF50;
