@@ -18,7 +18,6 @@ class perBuku extends HTMLElement{
   set buku(buku){
     this.root.innerHTML = `
     <style>
-    <style>
     #wrapper {
       border:hide;
       width: 630px;
