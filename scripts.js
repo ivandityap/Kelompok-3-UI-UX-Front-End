@@ -398,7 +398,7 @@ class filterBuku extends HTMLElement{
   }
   set filter(filter){
     this.innerHTML = `
-        <a href='javascript:void();' onclick="ambildataListBukuKategori('${filter.kategori}')">${filter.kategori.toUpperCase()}</a>        
+        <a href='javascript:void(0);' onclick="ambildataListBukuKategori('${filter.kategori}')">${filter.kategori.toUpperCase()}</a>        
     `;
   }
 }
@@ -464,11 +464,11 @@ async function ambildataBukuTerbaruTerpopuler(){
 async function ambildataListBuku(){
   Buku.setKategori('')
   document.getElementById("areafilter").innerHTML = `
-      <a href='javascript:void();' onclick="ambildataListBuku('')">All</a>
+      <a href='javascript:void(0);' onclick="ambildataListBuku('')">All</a>
   `;
   document.getElementById("areasort").innerHTML = `
-      <a href='javascript:void();' onclick="sortBuku('asc')">Harga Tertinggi</a>
-      <a href='javascript:void();' onclick="sortBuku('desc')">Harga Terendah</a>
+      <a href='javascript:void(0);' onclick="sortBuku('asc')">Harga Tertinggi</a>
+      <a href='javascript:void(0);' onclick="sortBuku('desc')">Harga Terendah</a>
   `;
 
   const options ={
